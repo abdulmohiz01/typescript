@@ -312,8 +312,35 @@ export default function Home() {
     }
   }
 
-  Dog.prototype.move();
-  Dog.prototype.makeSound();
+  //Dog.prototype.move();
+  //Dog.prototype.makeSound();
+
+  //Generics
+  class ArrayList<T> {
+    constructor(public value: T) {}
+
+    getValue(): T {
+      return this.value;
+    }
+  }
+
+  const gen1 = new ArrayList<string>("Mohiz");
+  const gen2 = new ArrayList<number>(123);
+  console.log(gen1.getValue());
+  console.log(gen2.getValue());
+
+  function getArray<T>(arr: T[]): T[] {
+    return arr;
+  }
+
+  function gexample<T>(arg: T): T {
+    return arg;
+  }
+
+  interface Bottle {
+    brand: string;
+    type: number;
+  }
 
   return (
     <main className="">
@@ -322,3 +349,7 @@ export default function Home() {
     </main>
   );
 }
+function identityFour<T>(arg0: {}) {
+  throw new Error("Function not implemented.");
+}
+
