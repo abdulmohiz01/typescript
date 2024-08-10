@@ -298,6 +298,23 @@ export default function Home() {
     }
   }
 
+  //Abstract Classes
+  abstract class Animal {
+    abstract makeSound(): void;
+    move(): void {
+      console.log("Moving");
+    }
+  }
+
+  class Dog extends Animal {
+    makeSound(): void {
+      console.log("Bark");
+    }
+  }
+
+  Dog.prototype.move();
+  Dog.prototype.makeSound();
+
   return (
     <main className="">
       <h1></h1>
