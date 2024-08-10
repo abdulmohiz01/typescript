@@ -19,7 +19,57 @@ export default function Home() {
   type postive = 1 | 2 | 3 | 4;
   function deleteUser(user: User) {}
 
-  console.log(user.id + user.name);
+  // console.log(user.id + user.name);
+  let userId: number = 123.1;
+  let userName: string = "Mohiz";
+  let isUser: boolean = true;
+
+  let hero;
+  function getHero() {
+    return "Mohiz";
+  }
+  hero = getHero();
+  //console.log(hero);
+
+  function addTwo(num: number) {
+    return num + 2;
+  }
+  function getUpper(val: string) {
+    return val.toUpperCase();
+  }
+  // console.log(getUpper("mohiz"));
+  // console.log(addTwo(2));
+
+  let loginUser = (username: string, password: string, isPaid: boolean) => {
+    console.log(username, password, isPaid);
+  };
+  //loginUser("Hey", "2", false);
+
+  // function getValue(myVal: number):  {
+  //   if (myVal < 5) {
+  //     return true;
+  //   }
+  //   return "200 OK";
+  // }
+
+  const getHello = (name: string): string => {
+    return " ";
+  };
+
+  const heroes = ["Mohiz", "Ali", "Ahmed"];
+  //const heroes = [1, 2, 3];
+
+  heroes.map((hero): string => {
+    return `hero is ${hero}`;
+  });
+
+  function consoleError(errmsg: string): void {
+    console.log(errmsg);
+  }
+
+  function getError(errmsg: string): never {
+    throw new Error(errmsg);
+  }
 
   return (
     <main className="">
