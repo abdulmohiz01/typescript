@@ -71,6 +71,39 @@ export default function Home() {
     throw new Error(errmsg);
   }
 
+  // Objects
+
+  const User = {
+    name: "Mohiz",
+    email: "123@gmail.com",
+    age: 23,
+  };
+
+  function createUser({
+    name,
+    email,
+    age,
+  }: {
+    name: string;
+    email: string;
+    age: number;
+  }): void {
+    console.log(`Name: ${name}, Email: ${email}, Age: ${age}`);
+  }
+  //createUser(User);
+
+  function check({
+    name = "Hira",
+    age = 13,
+  }: {
+    name: string;
+    age: number;
+  }): void {
+    console.log(name, age);
+  }
+
+  //check({});
+
   return (
     <main className="">
       <h1>{var1}</h1>
