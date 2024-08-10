@@ -186,6 +186,18 @@ export default function Home() {
   // console.log(tuple);
 
 
+  //Enums
+  enum Direction {
+    Up = 10,
+    Down = 15,
+    Left ="Mohiz",
+    Right = 2,
+    Middle,
+  }
+  let direction: Direction = Direction.Left;
+  // console.log(direction);
+
+
 
   return (
     <main className="">
