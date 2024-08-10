@@ -151,10 +151,9 @@ export default function Home() {
   };
 
   //Arrays
-  const arr: string[]= ['Mohiz', 'Ali', 'Ahmed'];
+  const arr: string[] = ["Mohiz", "Ali", "Ahmed"];
   const arr2: number[] = [1, 2, 3];
   const arr3: Array<number> = [4, 5, 6]; //different way to define array with same logic
-
 
   // arr.push('Hira');
   // arr2.push(4);
@@ -163,7 +162,6 @@ export default function Home() {
 
   //Union Types
   let val: string | number = 1;
-
 
   function getDbId(id: string | number) {
     if (typeof id === "string") {
@@ -185,19 +183,26 @@ export default function Home() {
   // console.log(rgb)
   // console.log(tuple);
 
-
   //Enums
   enum Direction {
     Up = 10,
     Down = 15,
-    Left ="Mohiz",
+    Left = "Mohiz",
     Right = 2,
     Middle,
   }
   let direction: Direction = Direction.Left;
   // console.log(direction);
 
-
+  //Interface
+  interface Employee {
+    name: string;
+    age: number;
+    role: string;
+  }
+  interface Manager extends Employee {
+    salary: number;
+  }
 
   return (
     <main className="">
