@@ -101,8 +101,19 @@ export default function Home() {
   }): void {
     console.log(name, age);
   }
-
   //check({});
+
+  // Type Alias
+  type Student = {
+    name: string;
+    age: number;
+  };
+
+  function createStudent(student: Student) {
+    return { name: student.name, age: student.age };
+  }
+
+  createStudent({ name: "Skylark", age: 23 });
 
   return (
     <main className="">
