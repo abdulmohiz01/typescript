@@ -120,34 +120,72 @@ export default function Home() {
     readonly _id: string;
     name: string;
     age: number;
-    card?: number;  //optional
+    card?: number; //optional
   };
 
   let person: Person = {
     _id: "123",
     name: "Mohiz",
     age: 23,
-    // card: 123, 
+    // card: 123,
   };
   // person._id='2'
-  console.log(person.card)
+  //console.log(person.card);
 
-  type cardName= {
-    name: string
-  }
+  type cardName = {
+    name: string;
+  };
 
-  type CardNumber ={
-    number: number
-  }
-  type cardDetails = cardName & CardNumber & {
-    cvc: number
-  }
+  type CardNumber = {
+    number: number;
+  };
+  type cardDetails = cardName &
+    CardNumber & {
+      cvc: number;
+    };
 
   let card: cardDetails = {
     name: "Mohiz",
     number: 123,
-    cvc: 123
+    cvc: 123,
+  };
+
+  //Arrays
+  const arr: string[]= ['Mohiz', 'Ali', 'Ahmed'];
+  const arr2: number[] = [1, 2, 3];
+  const arr3: Array<number> = [4, 5, 6]; //different way to define array with same logic
+
+
+  // arr.push('Hira');
+  // arr2.push(4);
+  // console.log(arr);
+  // console.log(arr2);
+
+  //Union Types
+  let val: string | number = 1;
+
+
+  function getDbId(id: string | number) {
+    if (typeof id === "string") {
+      return id.toUpperCase();
+    }
+    return id;
   }
+
+  //Type Guards
+  function isString(val: string | number): val is string {
+    return typeof val === "string";
+  }
+
+  //Tuples
+  type Tuple = [string, number];
+  let tuple: Tuple = ["Mohiz", 123];
+  let rgb: [number, number, number] = [255, 0, 0];
+  rgb.push(123);
+  // console.log(rgb)
+  // console.log(tuple);
+
+
 
   return (
     <main className="">
