@@ -115,6 +115,40 @@ export default function Home() {
 
   createStudent({ name: "Skylark", age: 23 });
 
+  //Readonly
+  type Person = {
+    readonly _id: string;
+    name: string;
+    age: number;
+    card?: number;  //optional
+  };
+
+  let person: Person = {
+    _id: "123",
+    name: "Mohiz",
+    age: 23,
+    // card: 123, 
+  };
+  // person._id='2'
+  console.log(person.card)
+
+  type cardName= {
+    name: string
+  }
+
+  type CardNumber ={
+    number: number
+  }
+  type cardDetails = cardName & CardNumber & {
+    cvc: number
+  }
+
+  let card: cardDetails = {
+    name: "Mohiz",
+    number: 123,
+    cvc: 123
+  }
+
   return (
     <main className="">
       <h1>{var1}</h1>
