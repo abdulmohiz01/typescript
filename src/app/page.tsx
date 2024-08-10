@@ -250,7 +250,53 @@ export default function Home() {
     }
   }
   let truck1 = new Truck("Nissan", "8 Wheel", 50500300);
-  console.log(truck1.getTruckData());
+  //console.log(truck1.getTruckData());
+
+  //Getters & Setters
+  class Person {
+    protected _name: string;
+    constructor(name: string) {
+      this._name = name;
+    }
+
+    get name(): string {
+      return this._name;
+    }
+
+    set name(name: string) {
+      this._name = name;
+    }
+  }
+
+  class subPerson extends Person {
+    age: number;
+    isFemale: boolean;
+    constructor(name: string, age: number, isFemale: boolean) {
+      super(name);
+      this.age = age;
+      this.isFemale = isFemale;
+    }
+  }
+
+  interface Takephoto {
+    cameraMode: string;
+    filter: string;
+    burst: number;
+  }
+
+  interface Story {
+    createStory(): void;
+  }
+  class Instagram implements Takephoto, Story {
+    constructor(
+      public cameraMode: string,
+      public filter: string,
+      public burst: number
+    ) {}
+    createStory(): void {
+      console.log("Story Created");
+    }
+  }
 
   return (
     <main className="">
