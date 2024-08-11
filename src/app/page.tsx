@@ -342,6 +342,18 @@ export default function Home() {
     type: number;
   }
 
+  function getSearchProducts<T>(products: T[]) {
+    return products;
+  }
+
+  const getMoreSearhProducts = <T,> (products: T[]): T => { //we use comma to mention the generic function not a tag.function
+      const index= 3;
+    return products[index];
+    }
+
+    
+    console.log(getMoreSearhProducts([1,2,3,4,5,6,7,8,9,10]));
+
   return (
     <main className="">
       <h1></h1>
@@ -352,4 +364,3 @@ export default function Home() {
 function identityFour<T>(arg0: {}) {
   throw new Error("Function not implemented.");
 }
-
