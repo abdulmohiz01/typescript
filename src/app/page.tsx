@@ -1,3 +1,5 @@
+import { log } from "console";
+
 export default function Home() {
   // let var1: string = "Abdul Mohiz";
   // let var2: boolean = true;
@@ -326,8 +328,8 @@ export default function Home() {
 
   const gen1 = new ArrayList<string>("Mohiz");
   const gen2 = new ArrayList<number>(123);
-  console.log(gen1.getValue());
-  console.log(gen2.getValue());
+  // console.log(gen1.getValue());
+  // console.log(gen2.getValue());
 
   function getArray<T>(arr: T[]): T[] {
     return arr;
@@ -346,13 +348,74 @@ export default function Home() {
     return products;
   }
 
-  const getMoreSearhProducts = <T,> (products: T[]): T => { //we use comma to mention the generic function not a tag.function
-      const index= 3;
+  const getMoreSearhProducts = <T,>(products: T[]): T => {
+    //we use comma to mention the generic function not a tag.function
+    const index = 3;
     return products[index];
-    }
+  };
+  //console.log(getMoreSearhProducts([1,2,3,4,5,6,7,8,9,10]));
+  interface Database {
+    connection: string;
+    username: string;
+    password: string;
+  }
+  function anotherFunction<T, U extends Database>(val1: T, val2: U) {
+    //when we need somespecific generic type we use extends
+  }
 
-    
-    console.log(getMoreSearhProducts([1,2,3,4,5,6,7,8,9,10]));
+  //Type Narrowing
+  function narrowing(arg: string | null) {
+    if (arg === null) {
+      return "Default";
+    }
+    return arg;
+  }
+  function logvalue(x: Date | string) {
+    if (x instanceof Date) {
+      console.log(x.toUTCString());
+    } else {
+      console.log(x.toUpperCase());
+    }
+  }
+  logvalue(new Date());
+
+  type Fish = { swim: () => void };
+  type Bird = { fly: () => void };
+
+  function isFish(pet: Fish | Bird): pet is Fish {
+    return (pet as Fish).swim !== undefined;
+  }
+
+  function getFood(pet: Fish | Bird) {
+    if (isFish(pet)) {
+      pet;
+      return "Fish food";
+    }
+    return "Bird food";
+  }
+  //Discriminated Unions
+  interface Square {
+    kind: "square";
+    size: number;
+  }
+  interface Rectangle {
+    kind: "rectangle";
+    width: number;
+    height: number;
+  }
+  type shape = Rectangle | Square;
+
+  function getShape(Shape: shape) {
+    switch (Shape.kind) {
+      case "square":
+        return Shape.size;
+      case "rectangle":
+        return Shape.width * Shape.height;
+      default:
+        const check: never = Shape;
+        return check;
+    }
+  }
 
   return (
     <main className="">
