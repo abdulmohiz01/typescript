@@ -245,7 +245,7 @@ export default function Home() {
       public name: string,
       public model: string,
       public price: number
-    ) {}
+    ) { }
 
     getTruckData(): string {
       return `Name: ${this.name}, Model: ${this.model}, Price: ${this.price}`;
@@ -294,7 +294,7 @@ export default function Home() {
       public cameraMode: string,
       public filter: string,
       public burst: number
-    ) {}
+    ) { }
     createStory(): void {
       console.log("Story Created");
     }
@@ -319,7 +319,7 @@ export default function Home() {
 
   //Generics
   class ArrayList<T> {
-    constructor(public value: T) {}
+    constructor(public value: T) { }
 
     getValue(): T {
       return this.value;
@@ -419,7 +419,7 @@ export default function Home() {
 
   return (
     <main className="">
-      <h1></h1>
+      <h1>This is all about typescript</h1>
       <h1></h1>
     </main>
   );
